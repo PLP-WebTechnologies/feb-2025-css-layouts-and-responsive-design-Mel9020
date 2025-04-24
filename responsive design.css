@@ -1,0 +1,132 @@
+/* Root Variables */
+:root {
+    --dust-pink: #e8c1c5;
+    --dust-pink-dark: #c89ca1;
+    --text-color: #333;
+    --bg-light: #fff6f7;
+    --bg-card: #ffffff;
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-color);
+    line-height: 1.6;
+  }
+  
+  a {
+    color: var(--text-color);
+    text-decoration: none;
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-areas:
+      "nav"
+      "hero"
+      "about"
+      "projects"
+      "contact";
+    gap: 2rem;
+    padding: 1rem;
+  }
+  
+  nav {
+    grid-area: nav;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--dust-pink-dark);
+    color: white;
+    padding: 1rem 2rem;
+  }
+  
+  nav .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  nav ul li {
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  nav ul li:hover {
+    color: #f0e0e2;
+  }
+  
+  section {
+    padding: 2rem;
+    background: var(--bg-card);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
+  
+  #hero {
+    grid-area: hero;
+    text-align: center;
+  }
+  
+  #about {
+    grid-area: about;
+  }
+  
+  #projects {
+    grid-area: projects;
+  }
+  
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+  }
+  
+  .project {
+    padding: 1rem;
+    background: var(--dust-pink);
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .project:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  }
+  
+  #contact {
+    grid-area: contact;
+  }
+  
+  @media (min-width: 768px) {
+    .grid-container {
+      grid-template-areas:
+        "nav nav"
+        "hero hero"
+        "about projects"
+        "contact contact";
+      grid-template-columns: 1fr 1fr;
+    }
+  
+    #hero {
+      text-align: left;
+    }
+  }
+  
